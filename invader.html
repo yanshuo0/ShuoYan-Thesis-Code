@@ -1,0 +1,84 @@
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <title>Knowledge Invader</title>
+        <link href="css/invader.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/core.css">
+        <link rel="stylesheet" type="text/css" href="css/typeography.css">
+        <link href="css/sweetalert.css" rel="stylesheet">
+        <!-- Bootstrap Core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet"> 
+        <link href="css/sweetalert.css" rel="stylesheet">
+    </head>
+    
+    <body id="myBody">
+        <p>
+            <font size="6">
+                <b id = "myTitle">Knowledge Invader</b>
+            </font>.
+            <br>
+        </p>
+        <div id="divMouse_follow" STYLE='position:absolute; left:100; top:1; z-index:2; color:#eeee00; font-size:36pt; font-family:arial;'>19</div>
+        <DIV id="divNumbers" STYLE='position:absolute; left:0; top:0; visibility:hidden'>Columns of numbers</DIV>
+        <div id="divInfo" STYLE='position:absolute; left:5; top:570; z-index:5; color:#ffff44; font-size:20pt; font-family:arial;'>Informations</div>
+        <div id="divTime" STYLE='position:absolute; left:660; top:570; z-index:6; color:#ffff88; font-size:20pt; font-family:arial;'>Time</div>
+        <div id="divEnd" STYLE='position:absolute; left:100; top:150; z-index:6; color:#ffff88; font-size:16pt; font-family:arial;'></div>
+        <div id="divCommentaires" STYLE='position:absolute; left:100; top:280; z-index:6; color:#ffff88; font-size:16pt; font-family:arial;'></div>
+        <div id="divOptions" STYLE='position:absolute; left:550; top:10; z-index:7; color:#ff8888; font-size:16pt; font-family:arial;'>
+            <FORM name="MaForm1">
+                Go back to game
+                <INPUT TYPE="button" value="Back" onclick="SetOption('hide')" STYLE='font-size:16pt; font-family:arial; font-weight:bold;'><br>
+<br>
+                <br>Importance of error :
+                <SELECT name="ErrorImportance">
+                    <option>Weak</option>
+                    <option>Average</option>
+                    <option>Strong</option>
+                </select>
+                <br>
+                <br>
+                <SELECT name="showComment">
+                    <option>No</option>
+                    <option>Yes</option>
+                </select>Display Comments
+                <br>
+            </FORM>
+        </div>
+        <div id="divOptionsShow" STYLE='position:absolute; left:870; top:10; z-index:8; color:#ff8888; font-size:16pt; font-family:arial;'>
+            <FORM name="MaForm2">
+                <INPUT TYPE="button" value="Options" onclick="SetOption('opt')" STYLE='font-size:16pt; font-family:arial; font-weight:bold;'>
+                <br>
+            </FORM>
+        </div>
+        <br>
+        <!-- Sweet Alert -->
+        <script src="js/sweetalert.min.js"></script>
+        <script src="js/invader.js"></script>
+        <script language="JavaScript">
+            oDivOptions = document.getElementById("divOptions");
+            oDivOptions.style.visibility = "hidden";
+            document.MaForm1.ErrorImportance.selectedIndex = 2;
+            document.MaForm1.showComment.selectedIndex = 1;
+        
+            Start();
+        </script>
+        <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+    </body>
+
+</html>

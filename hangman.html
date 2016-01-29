@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Open-Source User Data Importer">
+        <meta name="author" content="Shuo Yan">
+        <title>Knowledge Fighter -- ShuoYan</title>
+        <!-- Bootstrap Core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <!-- Custom CSS -->
+        <link href="css/hangman.css" rel="stylesheet">
+        <!-- Custom Fonts -->
+        <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="css/lora.css" rel="stylesheet" type="text/css">
+        <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media
+        queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file://
+        -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <!-- Sweet Alert CSS -->
+        <link href="css/sweetalert.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Demo Section -->
+        <section id="Demo" class="demo-section content-section text-center">
+            <h1 class="text-center page-header">Knowledge Hangman</h1>
+            <div class="row">
+            <div class="form-group">        
+                <div class="col-sm-4 col-sm-offset-4 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4">
+                <ul class="list-inline btn banner-social-buttons">
+                <li>
+                      <button id="startButton" type="button" class="btn btn-success" disabled="true">Start</button>
+                   </li>
+                   <li>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#info">Instruction</button>
+                   </li>
+                   <li>
+                      <button class="btn btn-danger reset">Reset</button>
+                      </li>
+                </ul>
+                </div>
+                
+            </div>
+            </div>
+
+            <div class="modal fade" id="noDataError">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title">Game Start!</h4>
+                  </div>
+                  <div class="modal-body">
+                    <h5>Get ready and save your man!!</h5>
+                  </div>
+                  <div class="modal-footer">
+                    <button class="btn btn-default" data-dismiss="modal"> Close </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="modal fade" id="gameStart">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title">Game Start!</h4>
+                  </div>
+                  <div class="modal-body">
+                    <h5>Get ready and save your man!!</h5>
+                  </div>
+                  <div class="modal-footer">
+                    <button class="btn btn-default" data-dismiss="modal"> Close </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="modal fade" id="noData">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title">Error! No Data!</h4>
+                  </div>
+                  <div class="modal-body">
+                    <h5>Get ready and save your man!!</h5>
+                  </div>
+                  <div class="modal-footer">
+                    <button class="btn btn-default" data-dismiss="modal"> Close </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+
+            <div id='info' class="modal fade">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h3 class="modal-title">Welcome to Hangman!</h3>
+                  </div>
+                  <div class="modal-body">
+                    <h4>The objective is to answer all input questions for three times.</h4>
+                    <ol>
+                        <li>Answer the questions and save your man!.</li>
+                        <li>If the questionis answered correctly for three times, a win message will be given.</li>
+                        <li>If a question is answered incorrectly, a part of the hangman will display, and the question you answer incorrectly will go to the graveyard.</li>
+                        <li>If you answered 7 questions incorrectly, your man will be hung.</li>
+                        <!-- [sudden death button info here if we want] -->
+                    </ol>
+                  </div>
+                  <div class="modal-footer">
+
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+
+                  </div>
+                </div><!-- /.modal-content -->
+              </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+
+
+            <div class="modal fade" id="congratulatory_message" role="dialog" data-backdrop="static" data-keyboard="false">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title">CONGRATULATIONS!</h4>
+                  </div>
+                  <div class="modal-body">
+                    <h5>Congratulations, you've won the game!!</h5>
+                  </div>
+                  <div class="modal-footer">
+                    <button class="btn btn-default" data-dismiss="modal"> Close and Reset </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="modal fade" id="gameover_message" role="dialog" data-backdrop="static" data-keyboard="false">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title">You lost the game!</h4>
+                  </div>
+                  <div class="modal-body">
+                    <div class="container-fluid">
+                      <div class="row">
+                        <div class="col-md-8 col-md-offset-2">
+                          <img class= "center-block" src="img/deadDude.png" alt="Dude dead!">
+                        </div><!--cold-md-8-->
+                      </div><!--.row-->
+                      <div class="row">
+                        <div class="col-md-10 col-md-offset-1">
+                          <p class="lead"></p>
+                        </div><!--./col-md-8-->
+                      </div><!--/.row-->
+                    </div><!--/.container-fluid-->
+                  </div><!--/.modal-body-->
+                  <div class="modal-footer">
+                    <button class="btn btn-default" data-dismiss="modal" id="gameover"> Close and Reset </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+        <div class="row">
+            <p></p>
+        </div>
+
+        <div class="row" id="myMedia">
+
+<div id="alphabet-keypad" class="col-sm-3">
+        
+      </div>
+
+            <div id="hangman-graphic" class="col-xs-6 col-sm-1 col-sm-offset-1 col-md-1 col-md-offset-2 col-lg-1 col-lg-offset-1">
+            <img src="img/hangman-graphic/background.png">
+            <img class="hangman-frames" id="hangman-frame0"
+             src="img/hangman-graphic/hangman0.jpg">
+            <img class="hangman-frames" id="hangman-frame1"
+             src="img/hangman-graphic/hangman1.jpg">
+            <img class="hangman-frames" id="hangman-frame2"
+             src="img/hangman-graphic/hangman2.jpg">
+            <img class="hangman-frames" id="hangman-frame3"
+             src="img/hangman-graphic/hangman3.jpg">
+            <img class="hangman-frames" id="hangman-frame4"
+             src="img/hangman-graphic/hangman4.jpg">
+            <img class="hangman-frames" id="hangman-frame5"
+             src="img/hangman-graphic/hangman5.jpg">
+            <img class="hangman-frames" id="hangman-frame6"
+             src="img/hangman-graphic/hangman6.jpg">
+            <img class="hangman-frames" id="hangman-frame7"
+             src="img/hangman-graphic/hangman7.jpg">
+             <div class="clearfix visible-xs-block"></div>
+             <div class="clearfix visible-sm-block"></div>
+             <div class="clearfix visible-md-block"></div>
+
+             <div class="hangman-controls">
+          
+        </div>
+      </div>
+             
+             <div id="letter-graveyard" class="col-xs-6 col-sm-2 col-md-2 col-lg-2">
+             <img src="img/graveyard.jpg">
+             </div>
+        <div id="letters" class="col-sm-3 col-md-3 col-lg-3"></div>
+</div>
+      <div class="text-center col-sm-4 col-sm-offset-4" id="question"></div>
+      <form class="text-center col-sm-4 col-sm-offset-4" id="myForm" onsubmit="return false">
+                <p>
+                    <label id="myLabel">Input your answer:</label>
+                    <input class="form-control center-block" id="answer" type="text" required autocomplete="off" placeholder="Please enter your answer here!">
+                    <input class="btn btn-default" id="button" type="submit" value="Submit" disabled/>
+                </p>
+            </form>
+      <div class="text-center col-xs-12 col-sm-12 col-md-12 col-lg-12" id="check"></div>
+      </div>
+        </section>
+         <!-- jQuery -->
+        <script src="js/jquery.js"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="js/bootstrap.min.js"></script>
+        <!-- Plugin JavaScript -->
+        <script src="js/jquery.easing.min.js"></script>
+         <!-- Sweet Alert -->
+        <script src="js/sweetalert.min.js"></script>
+        <!-- Custom Theme JavaScript -->
+        <script src="js/hangman.js"></script>
+       
+</body>
+</html>

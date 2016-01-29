@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8" />
+        <title>HTML5 Pacman</title>
+         <meta charset="utf-8">
+         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="css/core.css">
+        <link rel="stylesheet" type="text/css" href="css/typeography.css">
+        <!-- Bootstrap Core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <!-- Sweet Alert CSS -->
+        <link href="css/sweetalert.css" rel="stylesheet">
+        <style type="text/css">
+            @font-face {
+        	    font-family: 'BDCartoonShoutRegular';
+                src: url('BD_Cartoon_Shout-webfont.ttf') format('truetype');
+        	    font-weight: normal;
+        	    font-style: normal;
+              }
+              #body {
+              	background: -webkit-linear-gradient(left, rgba(210,5,5,0), rgba(255,0,0,1)); /* For Safari 5.1 to 6.0 */
+                background: -o-linear-gradient(right, rgba(210,5,5,0), rgba(255,0,0,1)); /* For Opera 11.1 to 12.0 */
+                background: -moz-linear-gradient(right, rgba(210,5,5,0), rgba(255,0,0,1)); /* For Firefox 3.6 to 15 */
+                background: linear-gradient(to right, rgba(210,5,5,0), rgba(255,0,0,1)); /* Standard syntax (must be last) */
+                margin: 0;
+                padding:0;
+                text-align: center;
+                width: 100%;
+                height: auto;
+              }
+              #pacman {
+                height:23%;
+                width: 28%;
+                text-align: center;
+                margin:0px auto;
+                vertical-align: center;
+                display: inline-block;
+              }
+
+              #shim { 
+                font-family: BDCartoonShoutRegular; 
+                position:absolute;
+                visibility:hidden
+              }
+              h1 { font-family: BDCartoonShoutRegular; text-align:center; }
+              body { width:960px; margin:10px auto; font-family:sans-serif; }
+              a { text-decoration:none; }
+        
+              #quiz {
+                text-align: center;
+              }
+              #slogan {
+              	font-family: Georgia;
+              	font-style: italic;
+              	font-size: 20px;
+              }
+              #answer {
+              	font-size: 20px;
+              	font-family: fantasy;
+                font-weight: bold;
+              }
+              #textIn {
+                width: 200px;
+              }
+              
+              #button {
+              	font-size: 24px;
+              	font-family: Georgia;
+              }
+              #button1 {
+              	font-size: 24px;
+              	font-family: Georgia;
+              }
+              #cancel {
+                font-size: 24px;
+                font-family: Georgia;
+              }
+            footer {
+        	text-align: center;
+        	font-size: 0.7em;
+        	border-top: 2px dotted #E8DFAC;
+        	padding-top: 1em;
+        	margin: 1em;
+        	clear: both;
+        }
+        </style>
+
+    </head>
+    
+    <body id="body">
+        <div id="shim">shim for font face</div>
+        <h1>HTML5 Pacman</h1>
+        <div id="pacman"></div>	
+        <div id="quiz">
+            <p id="slogan">Answer question correctly to get eating power, and to save life! Power-pellets eaten will regenerate in 10s ot help you!</p>
+			<div id = "question"></div>
+            <div id = "check"></div>
+            <form id="myForm">
+                <p>
+                    <label id="answer">Input your answer:</label>
+                    <input id="textIn" type="text" name="answer" autofocus autocomplete="off" placeholder="Please enter your answer here!">
+                    <input id="button" type="submit" value="Submit" disabled/>
+                    <input id="button1" type="reset" value="Reset"/>
+                </p>
+            </form>
+        </div>
+        <footer>Shuo YAN 2015, supervised by Prof. Martin Gander & Prof. Pierre-Alain Cherix</footer>
+        <script src="js/modernizr-1.5.min.js"></script>
+        <!-- Sweet Alert -->
+        <script src="js/sweetalert.min.js"></script>
+        <!-- jQuery -->
+        <script src="js/jquery.js"></script>
+        <script src="js/pacman.js"></script>
+        </script>
+
+
+
+        <script>
+            var el = document.getElementById("pacman");
+        
+            if (Modernizr.canvas && Modernizr.localstorage && 
+                Modernizr.audio && (Modernizr.audio.ogg || Modernizr.audio.mp3)) {
+              window.setTimeout(function () { PACMAN.init(el, "./"); }, 0);
+            } else { 
+              el.innerHTML = "Sorry, needs a decent browser<br /><small>" + 
+                "(firefox 3.6+, Chrome 4+, Opera 10+ and Safari 4+)</small>";
+            }
+			document.getElementById("myForm").onsubmit=function(e){return false;};
+        </script>
+    </body>
+
+</html>

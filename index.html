@@ -1,0 +1,227 @@
+<html>
+   <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Open-Source User Data Importer">
+        <meta name="author" content="Shuo Yan">
+        <title>Knowledge Fighter -- ShuoYan</title>
+        <!-- Bootstrap Core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <!-- Custom CSS -->
+        <link href="css/grayscale.css" rel="stylesheet">
+        <!-- Sweet Alert CSS -->
+        <link href="css/sweetalert.css" rel="stylesheet">
+        <!-- Custom Fonts -->
+        <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="css/lora.css" rel="stylesheet" type="text/css">
+        <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media
+        queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file://
+        -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+        <!-- Navigation -->
+        <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand page-scroll" href="#page-top">
+                    <i class="fa -circle fa-pulse fa-university"></i>&nbsp;<span style="font-weight: normal;">University of geneva</span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                    <ul class="nav navbar-nav">
+                        <!-- Hidden li included to remove active class from about link when scrolled
+                        up past about section -->
+                        <li class="hidden">
+                            <a href="#page-top"></a>
+                        </li>
+                        <li>
+                            <!-- HOME Section -->
+                            <a class="page-scroll" href="#home">HOME</a>
+                        </li>
+                        <li>
+                            <!-- ABOUT Section -->
+                            <a class="page-scroll" href="#about">About</a>
+                        </li>
+                        <li>
+                            <!-- IMPORTER Section -->
+                            <a class="page-scroll" href="#importer">Importer</a>
+                        </li>
+                        <li>
+                            <!-- GALERIE Section -->
+                            <a class="page-scroll" href="#galerie">Galerie</a>
+                        </li>
+                        <li>
+                            <!-- CONTACT Section -->
+                            <a class="page-scroll" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container -->
+        </nav>
+        <!-- Intro Header -->
+        <header class="intro">
+            <div class="intro-body" id="home">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2">
+                            <h1 class="brand-heading">knowledge fighter</h1>
+                            <p class="intro-text text-center">An Open-Source HTML5 Data Importer.
+                                <br>Gain knowledge from fun!</p>
+                            <a href="#about" class="btn btn-circle page-scroll">
+                            <i class="animated fa fa-angle-double-down fa-pulse"></i>
+                        </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <!-- About Section -->
+        <section id="about" class="container content-section text-center">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <h2>About knowledge fighter</h2>
+                    <p>This application is &nbsp;a master project proposed by
+                        <a href="#">Prof. Martin Gander</a>&nbsp;&amp;&nbsp;
+                        <a href="#">Prof. Pierre-Alain Cherix </a>from the Mathematics Department of
+                        <a href="#">University of Geneva</a>. The aim of this project is to free players from using predefined data
+                        embedded by game designer. We introduce a knowledge importer which allows
+                        players to enter their own data and then the game interface will use these
+                        user-defined data in the game.</p>
+                    <p>This application is programmed by Shuo Yan, master student in Computer
+                        Science at University of Geneva, supervised by Prof. Martin Gander and
+                        Prof. Pierre-Alain Cherix.&nbsp;This application is Open-Srouced, all resources
+                        could be found on Github. It can be further used as part of other projects.</p>
+                </div>
+            </div>
+        </section>
+
+            
+            <!-- Importer Section -->
+        
+        <section id="importer" class="content-section text-center">
+            <h1 class="text-center">Import your data
+                <br>
+            </h1>
+            <div class="row">
+            <div class="importer-section"></div>
+            <form class="form-inline" role="form">
+              <div class="form-group col-sm-4 col-sm-offset-4">
+                 <textarea class="form-control custom-control" autocomplete="off" placeholder="Please import your data here" id="dataImporter"></textarea>
+              
+                <span id="save" class="form-group-addon btn btn-primary">Save</span>
+                <span id="clear" class="form-group-addon btn btn-danger">Clear</span>
+              </div>
+            </form>
+            </div>
+            <div class="row">
+            <br>
+            <br>
+            <br>
+            <button id = "instruct" type="button" class="btn btn-info" data-toggle="modal" data-target="#info">Instruction</button>
+            <br>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div id='instruction' class="modal fade">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h3 class="modal-title">Instruction of Data Importer</h3>
+                  </div>
+                  <div class="modal-body">
+                    <h4>Please input of copy-paste your data in the abover textare and press "Save" button. Click "Reset" button to clear all input.</h4>
+                    <ol>
+                        <li>Each data should be input in a new line.</li>
+                        <li>Each data should be input in the format of "Question = Answer".</li>
+                        <li>After clicking "Save" button, please choose a game to play in the Galerie section by clicking corresponding button.</li>
+                        <li>To play Space Invaders, you need to input 8 data.</li>
+                        <!-- [sudden death button info here if we want] -->
+                    </ol>
+                  </div>
+                  <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </section>
+                    
+        <!-- Galerie Section -->
+        <section id="galerie" class="container content-section text-center">
+            <div class="row">
+                <div class="col-lg-12 col-lg-offset-0">
+                    <h1>Galerie of Game Interface
+                        <br>
+                    </h1>
+                    <p>Choose a game interface among the following interfaces
+                        <br>and start practicing.</p>
+                    <ul class="list-inline banner-social-buttons">
+					    <li>
+                            <a href="hangman.html" class="btn btn-default btn-sm"><i class="fa fa-fw fa-medkit"></i>Hangman</a></li>
+                        <li>
+                            <a href="invader.html" class="btn btn-default btn-sm"><i class="fa fa-fw fa-fighter-jet"></i>Math Invader</a></li>
+                            <li>
+                            <a href="spaceInvader.html" class="btn btn-default btn-sm" id="startInvade"><i class="fa fa-fw fa-fighter-jet"></i>Space Invaders</a></li>
+                            <li>
+                            <a href="pacman.html" class="btn btn-default btn-sm"><i class="fa -plus fa-fw fa-th"></i>Knowledge Pacman</a></li>
+                        </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="container content-section text-center">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h2>Further Use of Knowledge fighter</h2>
+                    <p>Feel free to use all resources of this projects as part of any other project
+                        <br>as it is an Open-Source project. You can find the entire project on Github.</p>
+                    <p>
+                        <a href="#">Shuo.Yan@etu.unige.ch</a>
+                    </p>
+                    <ul class="list-inline banner-social-buttons">
+                        <li>
+                            <a href="https://twitter.com/ShuoYan89" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/yanshuo0/ShuoYan-Thesis-Code" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/shuo.yan.5" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- Map Section -->
+        <!-- Footer -->
+        <footer>
+            <div class="container text-center">
+                <p>Shuo YAN 2015&nbsp;</p>
+            </div>
+        </footer>
+        <!-- jQuery -->
+        <script src="js/jquery.js"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="js/bootstrap.min.js"></script>
+        <!-- Plugin JavaScript -->
+        <script src="js/jquery.easing.min.js"></script>
+        <!-- Custom Theme JavaScript -->
+        <script src="js/grayscale.js"></script>
+        <!-- Sweet Alert -->
+        <script src="js/sweetalert.min.js"></script>
+
+</body></html>

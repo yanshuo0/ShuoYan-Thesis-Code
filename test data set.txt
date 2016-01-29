@@ -1,0 +1,54 @@
+Game Test input
+
+=====================================================================
+Math Equations
+=====================================================================
+1 + 3 = 4
+20 + 89 = 109
+398 + 482 = 880
+4 - 2 = 2
+53 - 23 = 30
+583 - 132 = 451
+3 * 4 = 12
+8 / 2 = 4
+18 / 3 = 6
+512 / 32 = 16
+1024 / 16 = 64
+32768 / 256 = 128
+3 + 4 x 2 = 11
+10 - 2 * 3 = 4
+72 / 8 + 4 = 13
+100 - 4 * 3 = 88
+1 * 4 = 4
+8 - 3 = 5
+10 + 3 = 13
+53 - 5 = 48
+===================================================================
+Language Vocabulary
+===================================================================
+Une = One
+Deux = Two
+Trois = Three
+Quatre = Four
+Cinq = Five
+Six = Six
+Sept = Seven
+Huit = Eight
+Neuf = Nine
+Dix = Ten
+Onze = Eleven
+Douze = Twelve
+Treize = Thirteen
+Quartorze = Fourteen
+Quinze = Fifteen
+Seize = Sixteen
+Dix-sept = Seventeen
+Vingt = Twenty
+Vingt-et-un = Twenty one
+Vingt deux = Twenty two
+Vingt trois = Twenty three
+Test Equation
+===================================================================
+1+1=2
+1+2=3
+1+3=4
